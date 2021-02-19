@@ -32,6 +32,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      idUser:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'tblUser',
+            key: 'idUser'
+        },
+      },
     })
   },
 

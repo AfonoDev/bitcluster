@@ -18,7 +18,7 @@ class Contrato extends Model{
         );
     }
     static associate(models){
-        this.hasMany(models.Usuario,  {foreignKey: "idContrato" })
+        this.belongsTo(models.Usuario);
     }
 }
 

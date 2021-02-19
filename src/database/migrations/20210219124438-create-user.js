@@ -12,49 +12,25 @@ module.exports = {
         type: Sequelize.STRING(100),
         allowNull: false
       },
+      senha:{
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       email:{
         type: Sequelize.STRING,
         allowNull: false
       },
       dataNasc:{
         type: Sequelize.STRING(20),
-        allowNull: false
+        allowNull: true
       },
       telefone:{
         type: Sequelize.STRING(15),
-        allowNull: false
+        allowNull: true
       },
       roles:{
         type: Sequelize.STRING(20),
         allowNull: false
-      },
-      idEndereco:{
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'tblEndereco',
-            key: 'idEndereco',
-        },
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE",
-      },
-      idContrato:{
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'tblContrato',
-            key: 'idContrato'
-        },
-      },
-      idDadosBanco:{
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-            model: 'tblDadosBancario',
-            key: 'idDadosBancarios'
-        },
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE"
       },
       created_at:{
         type: Sequelize.DATE,

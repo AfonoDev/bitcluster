@@ -19,10 +19,10 @@ class Usuario extends Model {
         )
     }
     static associate(models){
-        this.belongsTo(models.Endereco);
-        this.belongsTo(models.Contrato);
-        this.belongsTo(models.Banco);
         this.hasMany(models.DateTime,{foreignKey:"idUser"});
+        this.hasMany(models.Endereco,{foreignKey:"idUser"});
+        this.hasMany(models.Contrato,{foreignKey:"idUser"});
+        this.hasMany(models.Banco,{foreignKey:"idUser"});
     }
 }
 

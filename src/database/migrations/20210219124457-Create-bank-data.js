@@ -10,27 +10,37 @@ module.exports = {
       },
       agencia:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       tipo:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       conta:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       banco:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       dadosPix:{
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       receberViaPix:{
         type: Sequelize.TINYINT,
-        allowNull: false
+        allowNull: true
+      },
+      idUser:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'tblUser',
+            key: 'idUser'
+        },
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
     })
   },

@@ -18,7 +18,7 @@ class Banco extends Model{
         );
     }
     static associate(models){
-        this.hasMany(models.Usuario,  {foreignKey: "idDadosBancarios" })
+        this.belongsTo(models.Usuario);
     }
 }
 
