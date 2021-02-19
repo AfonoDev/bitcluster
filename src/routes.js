@@ -1,8 +1,8 @@
 const express = require('express');
 
-const usuarioController = require('./controller/usuario')
 
 const routes = express.Router();
+const usuarioController = require('./controller/usuario')
 
 
 routes.post("/usuario", usuarioController.store);

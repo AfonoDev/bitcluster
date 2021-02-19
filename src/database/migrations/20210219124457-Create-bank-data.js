@@ -2,8 +2,8 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("tblDadosBancario",{
-      idDadosBancarios:{
+    return queryInterface.createTable("bandodedados",{
+      id:{
         type: Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement: true
@@ -24,11 +24,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-      dadosPix:{
+      dados_pix:{
         type: Sequelize.STRING,
         allowNull: true
       },
-      receberViaPix:{
+      receber_via_pix:{
         type: Sequelize.TINYINT,
         allowNull: true
       },
@@ -36,8 +36,8 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: 'tblUser',
-            key: 'idUser'
+            model: 'usuarios',
+            key: 'id'
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE"
@@ -46,6 +46,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("tblDadosBancario", {})
+    return queryInterface.dropTable("bandodedados", {})
   }
 };

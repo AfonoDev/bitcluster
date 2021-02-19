@@ -2,29 +2,29 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("tblContrato",{
-      idContrato:{
+    return queryInterface.createTable("contrato",{
+      id:{
         type: Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement: true
       },
-      horaExtra:{
+      hora_extra:{
         type: Sequelize.TINYINT,
         allowNull: false
       },
-      salarioPorMes:{
+      salario_por_mes:{
         type: Sequelize.STRING,
         allowNull: false
       },
-      salarioPorDia:{
+      salario_por_dia:{
         type: Sequelize.STRING,
         allowNull: false
       },
-      timeInicioExpediente:{
+      time_inicio_expediente:{
         type: Sequelize.STRING,
         allowNull: false
       },
-      timeFinalExpediente:{
+      time_final_expediente:{
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -36,14 +36,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: 'tblUser',
-            key: 'idUser'
+            model: 'usuarios',
+            key: 'id'
         },
       },
     })
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("tblContrato", {})
+    return queryInterface.dropTable("contrato", {})
   }
 };

@@ -9,6 +9,7 @@ class Contrato extends Model{
             timeInicioExpediente :  DataTypes.STRING,
             timeFinalExpediente :  DataTypes.STRING,
             cargo :  DataTypes.STRING,
+            idUser: DataTypes.INTEGER
         },
         {
             timestamps: false,

@@ -1,13 +1,18 @@
 const { op } = require('sequelize');
+const conexao = require('../database');
 const Usuario = require('../models/Usuario');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { listen } = require('../app');
 
 
 module.exports = {
+
+    
+
     async list(request, response){
+        
         const usuario = await Usuario.findAll();
+
         response.send(usuario)
     },
 
@@ -31,7 +36,7 @@ module.exports = {
 
         console.log(gerarpass);
 
-        const secretPass = bcrypt.hash(gerarpass,50)
+        //const secretPass = bcrypt.hash(50)
         usuario = await Usuario.create({
             nome,
             email,

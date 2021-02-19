@@ -9,6 +9,7 @@ class Endereco extends Model{
             cidade:DataTypes.STRING,
             cep:DataTypes.STRING,
             rua:DataTypes.STRING,
+            idUser: DataTypes.INTEGER
         },
         {
             timestamps: false,

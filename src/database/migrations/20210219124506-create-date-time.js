@@ -2,21 +2,21 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("tblDateTime",{
-      idDateTime:{
+    return queryInterface.createTable("datetime",{
+      id:{
         type: Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement: true
       },
-      InicioTime:{
+      inicio_time:{
         type: Sequelize.DATE,
         allowNull: false
       },
-      fimTime:{
+      fim_time:{
         type: Sequelize.DATE,
         allowNull: false
       },
-      horasExtrasSalvo:{
+      horas_extras_salvo:{
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -28,12 +28,12 @@ module.exports = {
         type: Sequelize.TINYINT,
         allowNull: false
       },
-      idUser:{
+      created_usuario_id:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: 'tblUser',
-            key: 'idUser'
+            model: 'usuarios',
+            key: 'id'
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE"
@@ -42,6 +42,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("tblDateTime", {})
+    return queryInterface.dropTable("datetime", {})
   }
 };

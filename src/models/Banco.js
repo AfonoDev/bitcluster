@@ -9,6 +9,7 @@ class Banco extends Model{
             banco: DataTypes.STRING,
             dadosPix: DataTypes.STRING,
             receberViaPix: DataTypes.TINYINT,
+            idUser: DataTypes.INTEGER
         },
         {
             timestamps: false,

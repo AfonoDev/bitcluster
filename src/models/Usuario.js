@@ -1,29 +1,26 @@
-const {Model, DataTypes} = require('sequelize');
 
-class Usuario extends Model {
-    static init (sequelize){
-        super.init(
+
+const {Model, DataTypes} = require('sequelize');
+const database = require('../config/database');
+
+class Usuario  extends Model{
+    static init(sequelize){
+        super.init(   
             {
                 nome: DataTypes.STRING,
+                senha: DataTypes.STRING,
                 email: DataTypes.STRING,
-                dataNasc: DataTypes.STRING,
+                data_nasc: DataTypes.STRING,
                 telefone: DataTypes.STRING,
-                idEndereco: DataTypes.INTEGER,
-                idContrato: DataTypes.INTEGER,
-                idDadosBanco: DataTypes.INTEGER,
+                roles: DataTypes.STRING
             },
             {
                 sequelize,
-                tableName:"tblUser"
             }
-        )
+        );
     }
     static associate(models){
-        this.hasMany(models.DateTime,{foreignKey:"idUser"});
-        this.hasMany(models.Endereco,{foreignKey:"idUser"});
-        this.hasMany(models.Contrato,{foreignKey:"idUser"});
-        this.hasMany(models.Banco,{foreignKey:"idUser"});
+        this.hasMany(models.Datetime, {foreignKey: "created_usuario_id"})
     }
 }
-
 module.exports = Usuario;

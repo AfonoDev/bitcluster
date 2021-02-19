@@ -2,8 +2,8 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("tblEndereco",{
-      idEndereco:{
+    return queryInterface.createTable("endereco",{
+      id:{
         type: Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement: true
@@ -36,8 +36,8 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
-            model: 'tblUser',
-            key: 'idUser',
+            model: 'usuarios',
+            key: 'id',
         },
         onUpdate: "CASCADE",
         onDelete: "CASCADE",
@@ -46,6 +46,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("tblEndereco", {})
+    return queryInterface.dropTable("endereco", {})
   }
 };

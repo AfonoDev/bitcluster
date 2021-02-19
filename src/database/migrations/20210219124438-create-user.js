@@ -2,8 +2,8 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable("tblUser",{
-      idUser:{
+    return queryInterface.createTable("usuarios",{
+      id:{
         type: Sequelize.INTEGER,
         primaryKey:true,
         autoIncrement: true
@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      dataNasc:{
+      data_nasc:{
         type: Sequelize.STRING(20),
         allowNull: true
       },
@@ -36,7 +36,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
-      update_at:{
+      updated_at:{
         type: Sequelize.DATE,
         allowNull: false
       },
@@ -44,6 +44,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("tblUser", {})
+    return queryInterface.dropTable("usuarios", {})
   }
 };

@@ -1,8 +1,8 @@
 const express = require('express');
 const rotas = require('./routes');
-const cors = require('cors');
 
-//require('./database');
+
+const cors = require('cors');
 
 const app = express();
 

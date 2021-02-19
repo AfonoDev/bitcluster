@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-
+const database = require('../config/database');
 class Datetime extends Model{
     static init(sequelize){
         super.init({
@@ -8,17 +8,15 @@ class Datetime extends Model{
             horasExtrasSalvo:DataTypes.STRING,
             falta: DataTypes.STRING,
             pago: DataTypes.TINYINT,
-            idUser:  DataTypes.INTEGER,
         },
         {
-            timestamps: false,
             sequelize,
-            tableName: "tblDateTime"
+            tableName: "datetime"
         }
         );
     }
     static associate(models){
-        this.belongsTo(models.Usuario);
+        this.belongsTo(models.Usuario, {foreignKey:"created_usuario_id"});
     }
 }
 
