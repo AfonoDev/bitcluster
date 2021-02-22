@@ -13,5 +13,6 @@ routes.put('/usuario/:id', usuarioController.update);
 routes.use(autoizacaoMid);
 
 routes.post("/endereco", enderecoController.store);
+routes.put("/endereco/:id", enderecoController.update);
 
 module.exports = routes;

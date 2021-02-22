@@ -21,7 +21,7 @@ class Usuario  extends Model{
         );
     }
     static associate(models){
-        this.hasMany(models.Datetime, {foreignKey: "id_user"})
+        this.hasMany(models.Datetime, {foreignKey: "usuario_id"})
         this.hasOne(models.Endereco)
     }
 }

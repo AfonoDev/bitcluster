@@ -9,7 +9,7 @@ class Endereco extends Model{
             cidade:DataTypes.STRING,
             cep:DataTypes.STRING,
             rua:DataTypes.STRING,
-            id_user: DataTypes.INTEGER
+            usuario_id: DataTypes.INTEGER
         },
         {
             timestamps: false,
@@ -19,7 +19,7 @@ class Endereco extends Model{
         );
     }
     static associate(models){
-        this.belongsTo(models.Usuario, {foreignKey:"id_user"});
+        this.belongsTo(models.Usuario, {foreignKey:"usuario_id"});
     }
 }
 
