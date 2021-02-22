@@ -20,7 +20,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-      banco:{
+      banco_nome:{
         type: Sequelize.STRING,
         allowNull: true
       },
@@ -39,8 +39,6 @@ module.exports = {
             model: 'usuarios',
             key: 'id'
         },
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE"
       },
     })
   },

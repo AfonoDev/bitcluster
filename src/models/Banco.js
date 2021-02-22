@@ -6,9 +6,9 @@ class Banco extends Model{
             agencia: DataTypes.STRING,
             tipo: DataTypes.STRING,
             conta: DataTypes.STRING,
-            banco: DataTypes.STRING,
-            dadosPix: DataTypes.STRING,
-            receberViaPix: DataTypes.TINYINT,
+            banco_nome: DataTypes.STRING,
+            dados_pix: DataTypes.STRING,
+            receber_via_pix: DataTypes.TINYINT,
             usuario_id: DataTypes.INTEGER
         },
         {
