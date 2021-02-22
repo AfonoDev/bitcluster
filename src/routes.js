@@ -13,6 +13,8 @@ routes.put('/usuario/:id', usuarioController.update);
 
 routes.use(autoizacaoMid);
 
+routes.put('/usuario/adm/:id', usuarioController.updateAdm);
+
 routes.post("/endereco", enderecoController.store);
 routes.put("/endereco/:id", enderecoController.update);
 

@@ -78,5 +78,11 @@ module.exports = {
 
         res.status(201).send('atualizado')
     },
-    async updateAdm(req,res){}
+    async updateAdm(req,res){
+        const {nome,email,hora_extra,salario_por_mes,salario_por_dia,time_inicio_expediente,time_final_expediente,cargo} = req.body;
+        const {id} = req.params;
+        let usuario = await Usuario.findByPk(id)
+        usuario = await usuario.update({nome,email,hora_extra,salario_por_mes,salario_por_dia,time_inicio_expediente,time_final_expediente,cargo})
+        res.status(201).send('atualizado')
+    }
 }
