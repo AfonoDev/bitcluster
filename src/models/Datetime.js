@@ -8,6 +8,7 @@ class Datetime extends Model{
             horasExtrasSalvo:DataTypes.STRING,
             falta: DataTypes.STRING,
             pago: DataTypes.TINYINT,
+            id_user : DataTypes.INTEGER,
         },
         {
             sequelize,
@@ -16,7 +17,7 @@ class Datetime extends Model{
         );
     }
     static associate(models){
-        this.belongsTo(models.Usuario, {foreignKey:"created_usuario_id"});
+        this.belongsTo(models.Usuario, {foreignKey:"id_user"});
     }
 }
 

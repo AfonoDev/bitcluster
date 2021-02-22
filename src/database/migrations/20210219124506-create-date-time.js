@@ -28,7 +28,7 @@ module.exports = {
         type: Sequelize.TINYINT,
         allowNull: false
       },
-      created_usuario_id:{
+      id_user:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {

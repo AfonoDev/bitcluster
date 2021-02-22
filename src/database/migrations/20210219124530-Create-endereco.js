@@ -32,15 +32,13 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-      idUser:{
+      id_user:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references: {
             model: 'usuarios',
             key: 'id',
-        },
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE",
+        }
       },
     })
   },

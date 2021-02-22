@@ -9,12 +9,12 @@ class Contrato extends Model{
             timeInicioExpediente :  DataTypes.STRING,
             timeFinalExpediente :  DataTypes.STRING,
             cargo :  DataTypes.STRING,
-            idUser: DataTypes.INTEGER
+            id_user: DataTypes.INTEGER
         },
         {
             timestamps: false,
             sequelize,
-            tableName: "tblContrato"
+            tableName: "contrato"
         }
         );
     }

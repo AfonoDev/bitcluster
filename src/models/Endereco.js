@@ -9,17 +9,17 @@ class Endereco extends Model{
             cidade:DataTypes.STRING,
             cep:DataTypes.STRING,
             rua:DataTypes.STRING,
-            idUser: DataTypes.INTEGER
+            id_user: DataTypes.INTEGER
         },
         {
             timestamps: false,
             sequelize,
-            tableName: "tblEndereco"
+            tableName: "endereco"
         }
         );
     }
     static associate(models){
-        this.belongsTo(models.Usuario);
+        this.belongsTo(models.Usuario, {foreignKey:"id_user"});
     }
 }
 

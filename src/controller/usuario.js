@@ -3,8 +3,7 @@ const conexao = require('../database');
 const Usuario = require('../models/Usuario');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { request } = require('express');
-const { update } = require('../models/Usuario');
+const secret = require('../config/auth.json')
 
 
 module.exports = {
@@ -39,13 +38,17 @@ module.exports = {
        } catch (error) {
            console.log(error)
        }
+
+       const token = jwt.sign({usuarioId: usuario.id}, secret.secret)
+
         response.status(201).send({
             usuario:{
-                usuario: usuario.idUser,
+                usuario: usuario.id,
                 nome: usuario.nome,
                 email: usuario.email,
                 senha : usuario.senha
-            }
+            },
+            token
         })
     },
     async delete(req, res){
@@ -64,11 +67,15 @@ module.exports = {
         res.status(204).send({usuario: {IdDoUsuarioExcluido: usuario_id}})
     },
     async update(req, res){
-        const {nome,email,roles,senha,telefone,data_nasc} = req.params;
+        const {nome,email,roles,senha,  } = req.params;
+        const {data_nasc, telefone} = req.body;
+
         const {id} = req.params;
+
         let usuario = await Usuario.findByPk(id)
-        //const senhaCript = await bcrypt.hash(senha, 10);
+
         usuario = await usuario.update({nome, email, roles, senha, telefone, data_nasc})
+
         res.status(201).send('atualizado')
     }
 }

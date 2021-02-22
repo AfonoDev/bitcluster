@@ -16,11 +16,13 @@ class Usuario  extends Model{
             },
             {
                 sequelize,
+                tableName: "usuarios"
             }
         );
     }
     static associate(models){
-        this.hasMany(models.Datetime, {foreignKey: "created_usuario_id"})
+        this.hasMany(models.Datetime, {foreignKey: "id_user"})
+        this.hasOne(models.Endereco)
     }
 }
 module.exports = Usuario;

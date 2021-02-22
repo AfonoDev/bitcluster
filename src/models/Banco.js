@@ -9,12 +9,12 @@ class Banco extends Model{
             banco: DataTypes.STRING,
             dadosPix: DataTypes.STRING,
             receberViaPix: DataTypes.TINYINT,
-            idUser: DataTypes.INTEGER
+            id_user: DataTypes.INTEGER
         },
         {
             timestamps: false,
             sequelize,
-            tableName: "tblDadosBancario"
+            tableName: "bandodedados"
         }
         );
     }
