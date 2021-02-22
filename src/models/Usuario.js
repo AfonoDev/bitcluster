@@ -12,7 +12,13 @@ class Usuario  extends Model{
                 email: DataTypes.STRING,
                 data_nasc: DataTypes.STRING,
                 telefone: DataTypes.STRING,
-                roles: DataTypes.STRING
+                roles: DataTypes.STRING,
+                hora_extra: DataTypes.TINYINT,
+                salario_por_mes: DataTypes.STRING,
+                salario_por_dia: DataTypes.STRING,
+                time_inicio_expediente: DataTypes.STRING,
+                time_final_expediente: DataTypes.STRING,
+                cargo: DataTypes.STRING
             },
             {
                 sequelize,

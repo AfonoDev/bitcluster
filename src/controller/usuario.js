@@ -19,7 +19,7 @@ module.exports = {
 
     async store(request,response){
 
-        const {nome,email} = request.body;
+        const {nome,email,hora_extra,salario_por_mes,salario_por_dia,time_inicio_expediente,time_final_expediente,cargo} = request.body;
 
         const roles = "user";
 
@@ -33,8 +33,8 @@ module.exports = {
 
         
        try {
-           const secretPass = await bcrypt.hash(senha,10)
-          usuario = await Usuario.create({nome,email,senha:secretPass,roles});
+            const secretPass = await bcrypt.hash(senha,10)
+        usuario = await Usuario.create({nome,email,senha:secretPass,roles,hora_extra,salario_por_mes,salario_por_dia,time_inicio_expediente,time_final_expediente,cargo});
        } catch (error) {
            console.log(error)
        }
@@ -77,5 +77,6 @@ module.exports = {
         usuario = await usuario.update({nome, email, roles, senha, telefone, data_nasc})
 
         res.status(201).send('atualizado')
-    }
+    },
+    async updateAdm(req,res){}
 }
